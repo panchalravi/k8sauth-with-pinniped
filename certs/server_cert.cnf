@@ -1,0 +1,17 @@
+[req]
+distinguished_name = req_distinguished_name
+req_extensions = req_ext
+prompt = no
+
+[req_distinguished_name]
+C   = SG
+O   = Labs
+OU  = R&D
+CN  = supervisor.k8slabs.ga
+
+[req_ext]
+extendedKeyUsage  = serverAuth
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = supervisor.k8slabs.ga

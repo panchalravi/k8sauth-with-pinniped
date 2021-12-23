@@ -1,0 +1,10 @@
+apiVersion: config.supervisor.pinniped.dev/v1alpha1
+kind: FederationDomain
+metadata:
+  name: my-provider
+  # Assuming that this is the namespace where the supervisor was installed. This is the default in install-supervisor.yaml.
+  namespace: pinniped-supervisor
+spec:
+  # The hostname would typically match the DNS name of the public ingress or load balancer for the cluster.
+  # Any path can be specified, which allows a single hostname to have multiple different issuers. The path is optional.
+  issuer: https://supervisor.k8slabs.ga

@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pinniped-supervisor
+  namespace: pinniped-supervisor
+spec:
+  tls:
+  - hosts:
+      - supervisor.k8slabs.ga
+    secretName: supervisor-tls
+  rules:
+  - host: supervisor.k8slabs.ga
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pinniped-supervisor
+            port:
+              number: 80

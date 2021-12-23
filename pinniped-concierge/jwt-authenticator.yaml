@@ -1,0 +1,9 @@
+apiVersion: authentication.concierge.pinniped.dev/v1alpha1
+kind: JWTAuthenticator
+metadata:
+   name: jwt-authenticator
+spec:
+   issuer: https://gitlab.com
+   audience: da303438859eb29691eb2d9d0af86493b3bf42b92d06e6708443beff651d129f
+   claims:
+     username: email
